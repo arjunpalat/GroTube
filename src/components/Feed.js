@@ -5,10 +5,7 @@ import { Construction } from '@mui/icons-material';
 import { SideBar, Videos } from '.';
 import fetchVideos from '../utils/fetchVideos';
 
-
-
 export default function Feed() {
-
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -24,20 +21,22 @@ export default function Feed() {
     if (selectedCategory === "All") {
       handleDataFetch();
     }
-  }, [selectedCategory])
+  }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: 'column', md: 'row' } }}>
+    <Stack sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
       <Box
         sx={{
-          height: { sx: 'auto', md: '50vh' },
-          borderRight: '1px solid #3d3d3d',
-          px: { sx: 0, md: 2 }
+          height: { xs: 'auto', md: '100vh' },
+          borderRight: { xs: 'none', md: '1px solid #3d3d3d' },
+          px: { xs: 0, md: 2 },
+          mb: { xs: 2, md: 0 },
+          flexGrow: { xs: 1, md: 0 },
         }}
       >
         <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
       </Box>
-      <Box p={2} sx={{ overflow: 'auto', height: '90vh', flex: 2 }}>
+      <Box p={2} sx={{ overflow: 'auto', height: { xs: '70vh', md: '90vh' }, flex: 1 }}>
         {selectedCategory === 'All' && (
           <>
             <Typography
@@ -51,8 +50,8 @@ export default function Feed() {
               {selectedCategory} <span style={{ color: '#A020F0' }}>Videos</span>
             </Typography>
             {loading ? (
-              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <CircularProgress sx={{ color: '#A020F0' }} />
+              <Box sx={{ display: 'flex', justifyContent: 'center', height: '100vh', alignItems: 'flex-start' }}>
+                <CircularProgress size={60} sx={{ color: '#A020F0' }} />
               </Box>
             ) : (
               <Videos videos={videos} />
@@ -63,9 +62,9 @@ export default function Feed() {
           <Box
             sx={{
               display: 'flex',
-              justifyContent: 'center',
+              marginTop: '50px',
               alignItems: 'center',
-              height: '50vh',
+              height: 'autor',
               flexDirection: 'column',
             }}
           >
@@ -82,10 +81,10 @@ export default function Feed() {
           <Box
             sx={{
               display: 'flex',
-              justifyContent: 'center',
+              marginTop: '50px',
               alignItems: 'center',
               flexDirection: 'column',
-              height: '50vh'
+              height: 'auto'
             }}
           >
             <PublicIcon sx={{ fontSize: 96, color: '#A020F0' }} />
@@ -104,7 +103,7 @@ export default function Feed() {
               padding: '10px',
               borderRadius: '10px',
               marginTop: '10px',
-              height: '50vh',
+              height: '100vh',
               textAlign: 'center'
             }}
             elevation={1}

@@ -4,20 +4,25 @@ import { categories } from '../utils/Constants';
 export default function SideBar(props) {
     return (
         <Stack
-            direction="row"
+            direction={{ xs: 'row', md: 'column' }}
             sx={{
-                height: { sx: 'auto', md: '100%' },
-                flexDirection: { md: 'column', },
-
+                overflowY: "auto",
+                height: { xs: 'auto', md: '95vh' },
+                flexWrap: 'nowrap',
+                alignItems: { xs: 'center', md: 'flex-start' },
             }}
-            justifyContent='space-between'
+            justifyContent={{ xs: 'space-between', md: 'start' }}
+            gap={1}
+            border="1px solid lightblue" borderRadius="50px"
         >
             {categories.map((category) => (
                 <button
                     className="category-btn"
                     onClick={() => props.setSelectedCategory(category.name)}
                     style={{
-                        background: category.name === props.selectedCategory && '#A020F0', color: 'white'
+                        background: category.name === props.selectedCategory && '#A020F0',
+                        color: 'white',
+                        margin: '10px',
                     }}
                     key={category.name}
                 >
@@ -28,7 +33,7 @@ export default function SideBar(props) {
                         {category.icon}</span>
                     <span>{category.name}</span>
                 </button>
-            ))};
+            ))}
         </Stack>
     );
 };

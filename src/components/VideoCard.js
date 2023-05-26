@@ -8,7 +8,7 @@ export default function VideoCard({ video: { postId, creator: { name }, submissi
 
     return (
         <Card sx={{
-            width: { xs: '100%', sm: '358px', md: '320px' },
+            width: { xs: '320px', sm: '358px', md: '320px' },
             boxShadow: 'none', borderRadius: 0
         }}>
             <Link to={`/video/${postId}`} state={submission}>
@@ -30,8 +30,9 @@ export default function VideoCard({ video: { postId, creator: { name }, submissi
                         {submission?.title.slice(0, 60)}
                     </Typography>
                 </Link>
-                <Typography variant='subtitle2' fontWeight="bold" color="pink">
-                    <AccountCircleIcon sx={{ fontSize: "13px" }}></AccountCircleIcon> {name}
+                <Typography variant='subtitle2' fontWeight='bold' color='pink' sx={{ display: 'flex', alignItems: 'center' }}>
+                    <AccountCircleIcon sx={{ fontSize: 20, marginRight: 1, color: 'orange' }} />
+                    <span style={{ color: 'pink', textTransform: 'capitalize', marginTop: '1px' }}>{name}</span>
                 </Typography>
             </CardContent>
         </Card>
