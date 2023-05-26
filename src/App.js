@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { Box } from '@mui/material';
 import { Navbar, Feed, VideoDetails } from "./components";
 
 const App = () => (
-    <BrowserRouter>
+    <HashRouter>
         <Box sx={{ backgroundColor: "#000" }}>
             <Navbar />
             <Routes>
@@ -11,7 +11,7 @@ const App = () => (
                 <Route path="/video/:postId" exact element={<VideoDetails />} />
             </Routes>
         </Box>
-    </BrowserRouter>
+    </HashRouter>
 );
 
 export default App;
