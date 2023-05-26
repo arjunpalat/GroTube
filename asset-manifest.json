@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/GroTube/static/css/main.218e86cd.css",
-    "main.js": "/GroTube/static/js/main.7a0c2819.js",
+    "main.js": "/GroTube/static/js/main.a1bb616e.js",
     "index.html": "/GroTube/index.html",
     "main.218e86cd.css.map": "/GroTube/static/css/main.218e86cd.css.map",
-    "main.7a0c2819.js.map": "/GroTube/static/js/main.7a0c2819.js.map"
+    "main.a1bb616e.js.map": "/GroTube/static/js/main.a1bb616e.js.map"
   },
   "entrypoints": [
     "static/css/main.218e86cd.css",
-    "static/js/main.7a0c2819.js"
+    "static/js/main.a1bb616e.js"
   ]
 }
