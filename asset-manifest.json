@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GroTube/static/css/main.218e86cd.css",
+    "main.js": "/GroTube/static/js/main.f4d6614e.js",
+    "index.html": "/GroTube/index.html",
+    "main.218e86cd.css.map": "/GroTube/static/css/main.218e86cd.css.map",
+    "main.f4d6614e.js.map": "/GroTube/static/js/main.f4d6614e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.218e86cd.css",
+    "static/js/main.f4d6614e.js"
+  ]
+}
